@@ -1,4 +1,4 @@
-﻿string connectString = args.Length >= 1 ? args[0] : "localhost:51504";
+﻿string connectString = args.Length >= 1 ? args[0] : "localhost:49220";
 
 Server server = new Server();
 server.Connect(connectString);
@@ -164,6 +164,7 @@ class DaxFormatter
             Dax = daxExpression,
             DecimalSeparator = ".",
             ListSeparator = ",",
+            MaxLineLength = 1,
             DatabaseCompatibilityLevel = model.Database.CompatibilityLevel.ToString(),
             SkipSpaceAfterFunctionName = false
         };
@@ -244,7 +245,7 @@ class DaxFormatter
 class RequestBody
 {
     public string Dax { get; set; }
-    public object MaxLineLenght { get; set; }
+    public object MaxLineLength { get; set; }
     public bool SkipSpaceAfterFunctionName { get; set; }
     public string ListSeparator { get; set; }
     public string DecimalSeparator { get; set; }
